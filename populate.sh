@@ -4,8 +4,8 @@ read URL
 echo username:
 read username
 echo password:
-read password
-echo How many pages?
+read -s password
+echo Hello $username How many pages do you want?
 read number
 echo What is page prefex?
 read page_title
