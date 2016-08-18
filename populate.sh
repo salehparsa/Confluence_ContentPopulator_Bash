@@ -4,7 +4,16 @@ read URL
 echo username:
 read username
 echo password:
-read -s password
+unset password;
+while IFS= read -r -s -n1 pass; do
+  if [[ -z $pass ]]; then
+     echo
+     break
+  else
+     echo -n '*'
+     password+=$pass
+  fi
+done
 echo Hello $username How many pages do you want?
 read number
 echo What is page prefex?
